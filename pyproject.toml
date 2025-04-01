@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "query-intelligence-layer"
+version = "0.1.0"
+description = "SQL intelligence: AST safety guard, LIMIT enforcement, schema validation, plan summaries."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Kooroush Masoumi", email = "kooroushmasoumi@gmail.com" }]
+keywords = ["sql", "sqlglot", "guard", "validation", "nl2sql"]
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+dependencies = []
+
+[project.optional-dependencies]
+engine = ["sqlglot>=20"]
+dev = ["pytest>=7.4", "sqlglot>=20"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
